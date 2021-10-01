@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+
+function FirstComponent() {
+  return <div>First</div>;
+}
+
+const book = {
+  name: "name book",
+  pages: 150,
+  author: "author name",
+  about: "lorem impsum",
+};
+const musicBand = {
+  name: "Band name",
+  poster: "Poster",
+  about: "about",
+};
+function books(book) {
+  return book.name + "," + book.author + "," + book.pages;
+}
+function myBand(musicBand) {
+  return musicBand.name + "-->" + musicBand.poster + "-->" + musicBand.about;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>Info book: {books(book)}</div>;<p>Bands: {myBand(musicBand)} </p>
+      <FirstComponent />
+    </>
   );
 }
 
